@@ -45,7 +45,24 @@
       try {
 
         $stmt->execute();
-        $_SESSION['msg'] = "Contato atualizado com sucesso!";
+        $_SESSION['msg'] = 'Contato atualizado com sucesso!';
+        
+      }catch(Exception $e) {
+        echo 'ERRO: ' . $e->getMessage() . '<br>';
+      }
+
+    }else if ($data['type'] === 'delete'){
+
+      $id = $data['id'];
+      $query = 'DELETE FROM contacts WHERE id = :id';
+
+      $stmt = $conn->prepare($query);
+      $stmt->bindParam('id', $id);
+
+      try {
+
+        $stmt->execute();
+        $_SESSION['msg'] = 'Contato removido com sucesso!';
         
       }catch(Exception $e) {
         echo 'ERRO: ' . $e->getMessage() . '<br>';

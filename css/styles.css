@@ -100,6 +100,11 @@ body {
   margin: 0 auto;
 }
 
+/* DELETE */
+.delete-form {
+  display: inline-block;
+}
+
 /* MOBIEL */
 @media (max-width: 450px) {
   #home-link {
