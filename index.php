@@ -20,14 +20,14 @@
         <tbody>
           <?php foreach($contacts as $contact): ?>
             <tr>
-              <td scope="row"><?= $contact['id'] ?></td>
+              <td scope="row" class="col-id"><?= $contact['id'] ?></td>
               <td scope="row"><?= $contact['name'] ?></td>
               <td scope="row"><?= $contact['phone'] ?></td>
               <td class="actions">
                 <a href="#">
                   <i class="fas fa-eye check-icon"></i>
                   <i class="far fa-edit edit-icon"></i>
-                  <button type="submit">
+                  <button type="submit" class="delete-btn">
                     <i class="fas fa-times delete-icon"></i>
                   </button>
                 </a>
