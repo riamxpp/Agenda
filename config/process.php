@@ -10,7 +10,7 @@
 
   if (!empty($data)){
     // CRIAR CONTATO
-    if($data['type'] == 'create'){
+    if($data['type'] === 'create'){
       $name = $data['name'];
       $observations = $data['observations'];
       $phone = $data['phone'];
@@ -24,6 +24,29 @@
       try {
         $stmt->execute();
         $_SESSION['msg'] = "Contato criado com sucesso!";
+      }catch(Exception $e) {
+        echo 'ERRO: ' . $e->getMessage() . '<br>';
+      }
+    }else if ($data['type'] === 'edit'){
+      $name = $data['name'];
+      $observations = $data['obser$observations'];
+      $phone = $data['phone'];
+      $id = $data['id'];
+
+      $query = 'UPDATE contacts 
+                SET name = :name, observations = :observations, phone = :phone 
+                WHERE id = :id';
+      $stmt = $conn->prepare($query);
+      $stmt->bindParam('name', $name);
+      $stmt->bindParam('observations', $observations);
+      $stmt->bindParam('phone', $phone);
+      $stmt->bindParam('id', $id);
+
+      try {
+
+        $stmt->execute();
+        $_SESSION['msg'] = "Contato atualizado com sucesso!";
+        
       }catch(Exception $e) {
         echo 'ERRO: ' . $e->getMessage() . '<br>';
       }

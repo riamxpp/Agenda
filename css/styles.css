@@ -8,6 +8,10 @@
   margin: 15px 0 30px;
 }
 
+body {
+  width: 100vw;
+}
+
 /* HOME */
 #contacts-table {
   max-width: 800px;
@@ -93,5 +97,12 @@
 #create-form,
 #edit-form {
   max-width: 500px;
-  margin: 0;
+  margin: 0 auto;
+}
+
+/* MOBIEL */
+@media (max-width: 450px) {
+  #home-link {
+    display: none;
+  }
 }
