@@ -2,7 +2,8 @@
   include_once('templates/header.php');
 ?>
 
-  <div class='container' id='view-contact-container'>
+  <div class='container' id='view-contact-container'> 
+    <?php include_once('templates/backbtn.html'); ?>
     <h1 id="main-title"><?= $contact['name'] ?></h1>
     <p class='bold'>Contato:</p>
     <p> <?= $contact['phone']; ?></p>

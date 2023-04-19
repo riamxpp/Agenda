@@ -7,7 +7,7 @@
 
   // RETORNA UM CONTATO
   // $contact
-  if(isset($_GET)){
+  if(!empty($_GET)){
     $id = $_GET['id'];
   }
   if (!empty($id)){ 
